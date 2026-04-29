@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Scroll Animation Mastery | Premium Parallax Effects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="premium-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">✨ ScrollMagic</span>
+                <div class="logo-glow"></div>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#parallax" class="nav-link">Parallax</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Hero Section with Video Background -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge scroll-reveal">✨ Premium Experience</div>
+            <h1 class="hero-title scroll-reveal delay-1">
+                Scroll <span class="gradient-text">Animations</span><br>
+                That Captivate
+            </h1>
+            <p class="hero-subtitle scroll-reveal delay-2">
+                Experience next-level scroll-based animations with stunning parallax effects
+            </p>
+            <div class="hero-buttons scroll-reveal delay-3">
+                <button class="btn-primary" id="exploreBtn">Explore Now</button>
+                <button class="btn-secondary">Watch Demo</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll to experience</span>
+        </div>
+    </section>
+
+    <!-- Parallax Mountains Section -->
+    <section id="parallax" class="parallax-mountains">
+        <div class="parallax-container">
+            <div class="parallax-layer layer-sky" data-speed="0.1"></div>
+            <div class="parallax-layer layer-clouds" data-speed="0.3"></div>
+            <div class="parallax-layer layer-mountains-back" data-speed="0.5"></div>
+            <div class="parallax-layer layer-mountains-mid" data-speed="0.7"></div>
+            <div class="parallax-layer layer-mountains-front" data-speed="0.9"></div>
+            <div class="parallax-content">
+                <h2 class="parallax-title scroll-reveal">Depth & Dimension</h2>
+                <p class="parallax-text scroll-reveal delay-1">Experience true 3D parallax scrolling</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag scroll-reveal">Premium Features</span>
+                <h2 class="section-title scroll-reveal delay-1">Advanced Animation <span class="gradient-text">Techniques</span></h2>
+                <p class="section-subtitle scroll-reveal delay-2">Modern scroll effects that elevate user experience</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card scroll-reveal stagger-1">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Intersection Observer</h3>
+                    <p>High-performance scroll detection with precise triggering</p>
+                    <div class="feature-bg"></div>
+                </div>
+                
+                <div class="feature-card scroll-reveal stagger-2">
+                    <div class="feature-icon">⚡</div>
+                    <h3>GPU Accelerated</h3>
+                    <p>Smooth 60fps animations using transform & opacity</p>
+                    <div class="feature-bg"></div>
+                </div>
+                
+                <div class="feature-card scroll-reveal stagger-3">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Parallax Layers</h3>
+                    <p>Multi-dimensional depth with independent layer speeds</p>
+                    <div class="feature-bg"></div>
+                </div>
+                
+                <div class="feature-card scroll-reveal stagger-4">
+                    <div class="feature-icon">📊</div>
+                    <h3>Scroll Progress</h3>
+                    <p>Real-time scroll position tracking and indicators</p>
+                    <div class="feature-bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery with Scroll Reveal -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag scroll-reveal">Visual Journey</span>
+                <h2 class="section-title scroll-reveal delay-1">Stunning <span class="gradient-text">Gallery</span></h2>
+                <p class="section-subtitle scroll-reveal delay-2">Each image reveals with unique animation</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item scroll-reveal zoom-in" data-delay="0">
+                    <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=800&fit=crop')">
+                        <div class="gallery-overlay">
+                            <h3>Mountain Majesty</h3>
+                            <p>Alps, Switzerland</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-reveal zoom-in" data-delay="1">
+                    <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=800&fit=crop')">
+                        <div class="gallery-overlay">
+                            <h3>Mystic Forest</h3>
+                            <p>Black Forest, Germany</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-reveal zoom-in" data-delay="2">
+                    <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=800&fit=crop')">
+                        <div class="gallery-overlay">
+                            <h3>Ocean View</h3>
+                            <p>Maldives</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-reveal zoom-in" data-delay="3">
+                    <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600&h=800&fit=crop')">
+                        <div class="gallery-overlay">
+                            <h3>City Lights</h3>
+                            <p>Tokyo, Japan</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-reveal zoom-in" data-delay="4">
+                    <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=800&fit=crop')">
+                        <div class="gallery-overlay">
+                            <h3>Desert Dunes</h3>
+                            <p>Sahara, Morocco</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-reveal zoom-in" data-delay="5">
+                    <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&h=800&fit=crop')">
+                        <div class="gallery-overlay">
+                            <h3>Waterfall</h3>
+                            <p>Iguazu, Argentina</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-section">
+        <div class="stats-overlay"></div>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card scroll-trigger">
+                    <div class="stat-number" data-target="158">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                    <div class="stat-icon">🚀</div>
+                </div>
+                <div class="stat-card scroll-trigger">
+                    <div class="stat-number" data-target="47">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                    <div class="stat-icon">😊</div>
+                </div>
+                <div class="stat-card scroll-trigger">
+                    <div class="stat-number" data-target="12">0</div>
+                    <div class="stat-label">Countries</div>
+                    <div class="stat-icon">🌍</div>
+                </div>
+                <div class="stat-card scroll-trigger">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">Awards Won</div>
+                    <div class="stat-icon">🏆</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag scroll-reveal">Client Love</span>
+                <h2 class="section-title scroll-reveal delay-1">What People <span class="gradient-text">Say</span></h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card scroll-reveal slide-left">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The scroll animations completely transformed our website. Users can't stop complimenting the smooth experience!</p>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-image: url('https://randomuser.me/api/portraits/women/1.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>Creative Director</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card scroll-reveal slide-up">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Finally, a scroll animation library that's both powerful and performant. The parallax effects are incredible!</p>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-image: url('https://randomuser.me/api/portraits/men/2.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>UX Designer</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card scroll-reveal slide-right">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Best investment we made for our portfolio. The scroll-triggered animations are pure magic!</p>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-image: url('https://randomuser.me/api/portraits/women/3.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <span>Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content scroll-reveal">
+                <h2>Ready to Create <span class="gradient-text">Magic?</span></h2>
+                <p>Start implementing stunning scroll animations today</p>
+                <button class="btn-primary btn-large">Get Started Free →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">✨ ScrollMagic</span>
+                    <p>Creating immersive web experiences since 2024</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Documentation</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ScrollMagic. Premium scroll animation mastery.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
