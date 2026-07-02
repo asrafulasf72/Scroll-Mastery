@@ -83,3 +83,104 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // ========== STATS COUNTER WITH SCROLL TRIGGER ==========
+    const counters = document.querySelectorAll('.stat-number');
+    let counterTriggered = false;
+    
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !counterTriggered) {
+                counterTriggered = true;
+                
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = target / 60; // 60 steps for smooth animation
+                    const duration = 2000; // 2 seconds
+                    const stepTime = duration / 60;
+                    
+                    const updateCounter = setInterval(() => {
+                        if (current < target) {
+                            current += increment;
+                            counter.textContent = Math.ceil(current);
+                        } else {
+                            counter.textContent = target;
+                            clearInterval(updateCounter);
+                        }
+                    }, stepTime);
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    const statCards = document.querySelectorAll('.stat-card');
+    statCards.forEach(card => counterObserver.observe(card));
+    
+    // ========== GALLERY STAGGER REVEAL ==========
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach((item, index) => {
+        const delay = item.getAttribute('data-delay') || index;
+        item.style.transitionDelay = `${delay * 0.1}s`;
+    });
+    
+    // ========== ACTIVE NAV LINK ON SCROLL ==========
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollPosition = window.scrollY + 200;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+    
+    // ========== SMOOTH SCROLL FOR NAVIGATION ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // ========== EXPLORE BUTTON SCROLL ==========
+    const exploreBtn = document.getElementById('exploreBtn');
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', () => {
+            const featuresSection = document.getElementById('features');
+            if (featuresSection) {
+                featuresSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+    
+    // ========== SCROLL INDICATOR CLICK ==========
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            const parallaxSection = document.getElementById('parallax');
+            if (parallaxSection) {
+                parallaxSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+    
