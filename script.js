@@ -195,3 +195,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    // ========== LAZY LOAD IMAGES ==========
+    const lazyImages = document.querySelectorAll('[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+    
+    // ========== SCALE CARDS ON SCROLL ==========
+    const cards = document.querySelectorAll('.feature-card');
+    
+    function updateCardScale() {
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const scrollPercent = 1 - (rect.top / windowHeight);
+            
+            if (scrollPercent > 0 && scrollPercent < 1) {
+                const scale = 0.95 + (scrollPercent * 0.1);
+                card.style.transform = `translateY(-${scrollPercent * 20}px) scale(${scale})`;
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateCardScale);
+    
+    // ========== PARALLAX ON STATS SECTION ==========
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.3;
+            statsSection.style.backgroundPositionY = `${rate}px`;
+        });
+    }
+    
