@@ -238,3 +238,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    // ========== ADD REVEAL CLASS TO INITIAL ELEMENTS ==========
+    setTimeout(() => {
+        document.querySelectorAll('.hero-title, .hero-subtitle, .hero-badge').forEach(el => {
+            el.classList.add('revealed');
+        });
+    }, 100);
+    
+    // ========== PERFORMANCE: DEBOUNCE SCROLL EVENTS ==========
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateProgressBar();
+                updateCardScale();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+    
+    // ========== FIXED BACKGROUND FOR PARALLAX ==========
+    const fixedBg = document.querySelector('.stats-section');
+    if (fixedBg) {
+        fixedBg.style.backgroundAttachment = 'fixed';
+    }
+    
+    console.log('🚀 Scroll Animation System Loaded Successfully!');
+    console.log('✨ Features:');
+    console.log('  - Custom Cursor');
+    console.log('  - Parallax Scrolling');
+    console.log('  - Scroll Progress Bar');
+    console.log('  - Stagger Animations');
+    console.log('  - Counter Animation');
+    console.log('  - Smooth Navigation');
+    console.log('  - Performance Optimized');
+});
+
+// ========== PRELOAD IMAGES FOR SMOOTHER EXPERIENCE ==========
+const imagesToPreload = [
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4',
+    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b',
+    'https://images.unsplash.com/photo-1519681393784-d120267933ba',
+    'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b'
+];
+
+imagesToPreload.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
+// ========== ERROR HANDLING ==========
+window.addEventListener('error', (e) => {
+    console.error('Error loading resource:', e.target.src || e.target.href);
+});
+
+// ========== RESPONSIVE CURSOR HIDE ON TOUCH ==========
+if ('ontouchstart' in window) {
+    const cursorElements = document.querySelectorAll('.custom-cursor, .custom-cursor-dot');
+    cursorElements.forEach(el => el.style.display = 'none');
+}
