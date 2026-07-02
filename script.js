@@ -184,3 +184,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    // ========== MOBILE MENU TOGGLE ==========
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinksContainer) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinksContainer.classList.toggle('active');
+        });
+    }
+    
